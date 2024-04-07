@@ -75,8 +75,11 @@ function Homepage() {
 }
 
 const HomepageStyled = styled.div`
-    background-color: #EDEDED;
+    // background-color: #EDEDED;
+    background-color: rgb(15, 15, 15);
     header{
+        
+        
         padding: 2rem 5rem;
         width: 60%;
         margin: 0 auto;
@@ -90,6 +93,7 @@ const HomepageStyled = styled.div`
             justify-content: center;
             margin-bottom: 2rem;
         }
+        
         .search-container{
             display: flex;
             align-items: center;
@@ -105,10 +109,17 @@ const HomepageStyled = styled.div`
                 font-size: 1.2rem;
                 background-color: #fff;
                 cursor: pointer;
-                transition: all .4s ease-in-out;
+                transition: all .1s ease-in-out;
                 font-family: inherit;
                 border: 5px solid #e5e7eb;
             }
+            button:hover{
+                background-color:#cadeed;
+                border:none;
+                
+                border:5px solid #cadeed;
+            }
+            
             form{
                 position: relative;
                 width: 100%;
@@ -133,6 +144,8 @@ const HomepageStyled = styled.div`
                     top: 50%;
                     transform: translateY(-50%);
                 }
+               
+                
             }
         }
     }
