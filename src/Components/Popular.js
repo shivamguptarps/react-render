@@ -10,12 +10,14 @@ function Popular({rendered}) {
     const conditionalRender = () => {
         if(!isSearch && rendered === 'popular'){
             return popularAnime?.map((anime) => {
-                return <Link to={`/anime/${anime.mal_id}`} key={anime.mal_id}>
-                    <div>
+                return(
+                <div>
+                <Link to={`/anime/${anime.mal_id}`} key={anime.mal_id}>
                     <img src={anime.images.jpg.large_image_url} alt="" />
                     <p>{anime.title}</p>
-                    </div>
                 </Link>
+                    </div>
+                )
             })
         }else{
             return searchResults?.map((anime) => {
@@ -66,6 +68,10 @@ const PopularStyled = styled.div`
             align-items:center;
             
         }
+        a{
+            width:100%;
+            height:100%;
+        }
         a img{
             width: 100%;
             height: 70%;
@@ -74,14 +80,17 @@ const PopularStyled = styled.div`
         }
         div:hover{
             opacity:1;
-            transform:scale(1.04);
-            brightness:1000%;
+            transform:scale(1.03);
+            backdrop-filter: brightness(3);
+        backdrop-filter: contrast(2);
         }
         p{
             text-align:center;
             color:white;
             margin-top:20px;
-            font-size:1.3em
+            font-size:1.3em;
+            
+
         }
     }
 `;
